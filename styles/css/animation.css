@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud {
+  width: 400px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 100px;
+  position: fixed;
+  top: var(--y);
+  left: 0;
+  z-index: 99;
+  transform: scale(0.9) translateX(-100%);
+  -webkit-animation: cloud 3s linear infinite;
+          animation: cloud 3s linear infinite;
+  -webkit-animation-delay: var(--delay);
+          animation-delay: var(--delay);
+  filter: drop-shadow(0 0 10px #eee);
+}
+.cloud::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+}
+.cloud::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+}
+
+@-webkit-keyframes cloud {
+  to {
+    transform: scale(0.9) translateX(calc(100vw + 100%));
+  }
+}
+
+@keyframes cloud {
+  to {
+    transform: scale(0.9) translateX(calc(100vw + 100%));
+  }
+}
+.drop {
+  width: 70px;
+  height: 70px;
+  background-color: #0ff;
+  transform: rotate(45deg);
+  border-radius: 10px 50% 50% 50%;
+  position: fixed;
+  top: 100px;
+  opacity: 0;
+  left: var(--x);
+  -webkit-animation: drop 1s ease-in infinite;
+          animation: drop 1s ease-in infinite;
+  -webkit-animation-delay: var(--delay);
+          animation-delay: var(--delay);
+}
+
+@-webkit-keyframes drop {
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    top: 100%;
+  }
+}
+
+@keyframes drop {
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    top: 100%;
+  }
+}/*# sourceMappingURL=animation.css.map */

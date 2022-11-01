@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud {
+  width: 400px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 100px;
+  position: fixed;
+  top: var(--y);
+  left: 0;
+  z-index: 99;
+  transform: scale(0.9) translateX(-100%);
+  animation: cloud 3s linear infinite;
+  animation-delay: var(--delay);
+  filter: drop-shadow(0 0 10px #eee);
+
+  &::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+  }
+
+  &::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+  }
+}
+
+@keyframes cloud {
+  to {
+    transform: scale(0.9) translateX(calc(100vw + 100%));
+  }
+}
+
+.drop {
+  width: 70px;
+  height: 70px;
+  background-color: #0ff;
+  transform: rotate(45deg);
+  border-radius: 10px 50% 50% 50%;
+  position: fixed;
+  top: 100px;
+  opacity: 0;
+  left: var(--x);
+  animation: drop 1s ease-in infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes drop {
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    top: 100%;
+  }
+}
+
+// .rect {
+//   width: 400px;
+//   height: 200px;
+//   background: linear-gradient(red, blue);
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 50px;
+//   font-weight: 900;
+//   color: #fff;
+//   animation-name: aylanish;
+//   animation-duration: 1s;
+//   animation-timing-function: ease-in-out;
+//   animation-delay: -0.5s;
+//   animation-iteration-count: infinite;
+//   animation-direction: alternate;
+//   animation-fill-mode: both;
+//   animation: aylanish 1s ease-in-out infinite;
+//   transform-origin: bottom center;
+
+//   &:hover {
+//     animation-play-state: paused;
+//   }
+// }
+
+// @keyframes aylanish {
+//   0% {
+//     transform: rotate(0);
+//   }
+//   30% {
+//     transform: rotate(0) translate(50%);
+//   }
+//   80% {
+//     transform: rotate(180deg);
+//   }
+//   100% {
+//     transform: rotate(180deg);
+//   }
+// }
+
+// .door {
+//   width: 100vw;
+//   height: 100vh;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   background-color: purple;
+//   z-index: 99;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   transition: 1s linear all 0.5s;
+
+//   &::before {
+//     content: "";
+//     width: 300px;
+//     height: 500px;
+//     background: linear-gradient(
+//       to right,
+//       black 25%,
+//       #333 25% 50%,
+//       black 50% 75%,
+//       #333 75%
+//     );
+//     position: absolute;
+//     // top: 50%;
+//     // left: 50%;
+//     // transform: translate(-50%, -50%);
+//     transition: 1s linear all;
+//     transform-origin: left;
+//   }
+
+//   &:hover {
+//     transform: scale(3);
+//     opacity: 0;
+//     &::before {
+//       transform: rotateY(75deg);
+//     }
+//   }
+// }
+
+// body {
+//   background-color: #00c3ff;
+// }
+
+// .mouse {
+//   width: 200px;
+//   height: 350px;
+//   border: 3px solid #fff;
+//   border-radius: 200px;
+//   display: flex;
+//   justify-content: center;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     width: 2rem;
+//     height: 2rem;
+//     border-radius: 50%;
+//     background-color: #fff;
+//     transform: translateY(1rem);
+//     animation: moveY 1s ease-in-out infinite;
+//   }
+// }
+
+// @keyframes moveY {
+//   to {
+//     transform: translateY(300px);
+//     opacity: 0;
+//   }
+// }
